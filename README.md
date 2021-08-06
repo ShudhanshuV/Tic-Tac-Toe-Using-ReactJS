@@ -1,3 +1,13 @@
+Live demo:- https://shudhanshuv.github.io/Tic-Tac-Toe-Using-ReactJS/
+
+Tic-Tac-Toe-Using-ReactJs is a Responsive Tic Tac Toe Game built using React JS.
+
+At first you have to fill the player's name then hit the submit button.
+
+Now, you entering the game, play smartly and also it Shows Player status at the top.
+
+At last card pop up with the name of winner in it, if you want to play again hit play again button.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
