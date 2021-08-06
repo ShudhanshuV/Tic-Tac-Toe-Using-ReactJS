@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Titillium+Web:wght@300&display=swap');
+
+body{
+  margin: 0;
+  background-color: #030303;
+  font-family: 'Titillium Web', sans-serif;
+  color: #fff;
+  letter-spacing: 2px;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 6em;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  perspective: 1000px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-container{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 400px;
+  width: 300px;
+  background: rgba(255, 255, 255, .1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(90, 90, 90, 0.198);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  transform-style: preserve-3d;
 }
 
-.App-link {
-  color: #61dafb;
+.form-wrapper h1{
+  font-size: 1em;
+  font-weight: lighter;
+  margin-bottom: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-input{
+  padding: .4em 0;
+  text-align: center;
+  border: none;
+}
+
+.form-input, .primary-btn{
+  margin:1em 8px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.212);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+.primary-btn{
+  font-size: 1em;
+  font-family: 'Titillium Web', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: .3em 3em;
+  width: 90%;
+  cursor: pointer;
+  border: .5px solid #5271ff;
+}
+
+.primary-btn:hover{
+  background-color: #5271ff;
+  letter-spacing: 4px;
+}
+
+.form-container p{
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+.navbar{
+  display: flex;
+  height: 15vh;
+  box-shadow: 0px 5px 20px #5271ff;
+}
+
+.heading{width: 50%;}
+
+.heading h1{
+  margin: 0.3em 0 0 2.5em;
+  font-size: 2.5em;
+  font-family: 'Satisfy', cursive;
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100%{
+    text-shadow:
+    0 0 4px #fff,
+    0 0 8px #fff,
+    0 0 12px #5271ff,
+    0 0 20px #5271ff,
+    0 0 35px #5271ff,
+    0 0 40px #5271ff;
   }
-  to {
-    transform: rotate(360deg);
+
+  20%, 24%, 55%{
+    text-shadow: none;
   }
+}
+
+.status{
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0.7em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: auto;
+  width: 50%;
+}
+
+.game{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 85vh;
+}
+
+.game p{
+  font-size: 1em;
+  margin: 0 0 4em 0;  
+}
+
+.board{
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  margin:0 0 2em 2em;
+}
+
+.tile{
+  width: 70px;
+  height: 70px;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 4px;
+  box-shadow: 0px 0px 20px #5271ff;
+  border: 2px solid #5271ff;
+}
+
+#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8{
+  transition: transform .1s ease-in;
+}
+
+#tile0:hover, #tile1:hover, #tile2:hover, #tile3:hover, #tile4:hover, #tile5:hover, #tile6:hover, #tile7:hover, #tile8:hover{
+  transform: scale(1.05);
 }
